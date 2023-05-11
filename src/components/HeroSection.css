@@ -1,0 +1,65 @@
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hero-name {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-subtitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.subtitle-item {
+    margin-right: 1rem;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* The slide-in animation */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* The typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Apply the slide-in animation to the subtitle item that needs to be shown */
+.subtitle-item.slide-in {
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.5s;
+}
+
+/* Apply the typing animation to the text inside the subtitle item */
+.subtitle-item .typing-animation {
+    animation-name: typing;
+    animation-duration: 1s;
+    animation-timing-function: steps(20, end);
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
